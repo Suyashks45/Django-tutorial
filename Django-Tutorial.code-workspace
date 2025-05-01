@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Django-tutorial",
+			"path": "Django-tutorial"
+		}
+	],
+	"settings": {}
+}
