@@ -17,11 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from recipe.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('',home),
+    path('recipes/', recipes , name = 'recipes'),
+    path('delete_recipe/<id>/', delete_recipe, name = 'delete_recipe'), 
+    path('update-recipe/<int:id>/', update_recipe, name='update_recipe'),
+    path('login/', login_page, name='login_page'),
+    path('logout/', logout_page , name='logout_page'),
+    path('register/', register_page, name='register_page'),
     path('contact/',contact),
     path('about/',about),
     path('success_page/',success_page),
     path('admin/', admin.site.urls),
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
